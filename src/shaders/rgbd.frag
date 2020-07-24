@@ -1,5 +1,3 @@
-#extension GL_OES_standard_derivatives : enable
-
 uniform sampler2D map;
 uniform float opacity;
 uniform float width;
