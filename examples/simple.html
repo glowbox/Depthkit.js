@@ -82,7 +82,7 @@
 			scene.fog = new THREE.Fog( 0x282828, 0.0, 10.0 );
 
 			// Setup camera
-			camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, .01, 20 );
+			camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, .01, 20 );
 			camera.position.set( 0, 2, 3 );
 
 			// Setup controls
@@ -95,14 +95,14 @@
 			scene.add(gridHelper);
 
 			depthkit = new Depthkit();
-			depthkit.load('../assets/John/John.txt', '../assets/John/John.mp4',
+			depthkit.load('../assets/20200806_1807.txt', '../assets/20200806_1807.mp4',
 				dkCharacter => {
 					character = dkCharacter;
 
 					//Position and rotation adjustments
-					dkCharacter.rotation.set( Math.PI - 0.25, 0, Math.PI / -2.0 );
+//					dkCharacter.rotation.set( Math.PI - 0.25, 0, Math.PI / -2.0 );
 					// dkCharacter.rotation.y = Math.PI;
-					dkCharacter.position.set( -0.25, 0.92, 0 );
+//					dkCharacter.position.set( -0.25, 0.92, 0 );
 
 					// Depthkit video playback control
 					depthkit.video.muted = "muted"; // Necessary for auto-play in chrome now
