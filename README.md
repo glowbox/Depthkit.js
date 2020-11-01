@@ -1,17 +1,3 @@
-Volumetric Performance Toolbox
-=====
-
-> How can artists create new live performances during the time of COVID-19? Volumetric Performance Toolbox empowers creators to perform from their own living spaces for a virtual audience. Movement artist Valencia James performed publicly with the Toolbox for the first time on September 24, 2020 in the Mozilla Hubs virtual social space. The project is a collaboration between Valencia James, Glowbox and Sorob Louie as part of Eyebeam’s Rapid Response for a Better Digital Future fellowship.
-
-More information on the Volumetric Performance Toolbox here:
-
-https://valenciajames.com/volumetric-performance/
-
-https://www.glowbox.io/work/volumetric-performance/
-
-This is a fork of the Depthkit.js project, it demonstrates visualizing HLS stream of a custom video texture.
-The custom texture is generate by this fork of AKVFX https://github.com/volumetricperformance/akvfx
-
 # Depthkit.js
 [![Build Status](https://travis-ci.org/juniorxsound/DepthKit.js.svg?branch=master)](https://travis-ci.org/juniorxsound/DepthKit.js)                [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 

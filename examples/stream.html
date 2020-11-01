@@ -30,6 +30,13 @@
 			top: 0; left: 0;
 			width: 20%;
 		}
+		#error {
+			color: rgb(255, 80, 80);
+			background-color: rgba(0,0,0,0.5);
+			
+			width: 100%;
+
+		}
 	</style>
 </head>
 
@@ -45,8 +52,9 @@
 
     <div id="info">
 		Volumnetric Stream example, assumes HLS stream and stacked RGB+D textures
-    </div>
+		<div id="error"></div>
 
+    </div>
 	<script>
 
 		//Some general Three.js components
@@ -58,9 +66,13 @@
 		var depthkit;
 		var dkstream;
 
+		function showError(err){
+			document.getElementById("error").innerHTML = err;
+		}
+
 		init();
 
-		function init() {
+		async function init() {
 
 			//Setup renderer
 			renderer = new THREE.WebGLRenderer();
@@ -87,17 +99,31 @@
 			scene.add(gridHelper);
 
 			depthkit = new DepthkitStream();
+			let url ;
+			try {
+				url = await fetch ("https://pv8hjtwzy1.execute-api.us-west-2.amazonaws.com/prod/");
+				url = await url.text();
 			
-			depthkit.load('https://stream.mux.com/Qv01KrOQC02xvM7yiYlcMQvpc74Tk01qkQs8pQMXnKIzAs.m3u8', 'points',
-				dk => {
-					dkstream = dk;
+			} catch (error) {
+				// show error
+				showError( error.message );
 
-					//Add the character to the scene
-					scene.add(dkstream);
+			}
+			
+			if(url !== "No steams were available")
+			{
+				depthkit.load(url, 'points',
+					dk => {
+						dkstream = dk;
 
-				}, 
+						//Add the character to the scene
+						scene.add(dkstream);
+
+					}, 
 				);
-
+			}else{
+				showError( "No steams were available" );
+			}
 			window.addEventListener( 'resize', onWindowResize, false );
 
 			render();
