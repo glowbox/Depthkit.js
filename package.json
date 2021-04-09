@@ -2,7 +2,7 @@
   "name": "depthkit",
   "version": "1.0.0",
   "description": "A plugin for rendering DepthKit volumetric videos using Three.js",
-  "main": "build/depthkit.js",
+  "main": "build/depthkit-min.js",
   "scripts": {
     "start": "concurrently \"http-server -s --cors\" \"watchify --exclude three src/index.js -o build/depthkit.js -v\"",
     "build": "browserify --exclude three src/index.js | uglifyjs -mc warnings=false > build/depthkit.min.js",
