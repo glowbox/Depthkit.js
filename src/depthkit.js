@@ -207,7 +207,10 @@ export default class Depthkit extends THREE.Object3D {
                     value: 1.0
                 }
             },
-
+            extensions:
+            {
+                derivatives: true,
+            },
             vertexShader: rgbdVert,
             fragmentShader: rgbdFrag,
             transparent: true

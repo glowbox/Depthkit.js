@@ -225,7 +225,9 @@ var Depthkit = function (_THREE$Object3D) {
                         value: 1.0
                     }
                 },
-
+                extensions: {
+                    derivatives: true
+                },
                 vertexShader: rgbdVert,
                 fragmentShader: rgbdFrag,
                 transparent: true

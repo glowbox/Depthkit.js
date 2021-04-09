@@ -4,8 +4,8 @@
   "description": "A plugin for rendering DepthKit volumetric videos using Three.js",
   "main": "build/depthkit.js",
   "scripts": {
-    "start": "concurrently \"http-server -s --cors\" \"watchify src/index.js -o build/depthkit.js -v\"",
-    "build": "browserify src/index.js | uglifyjs -mc warnings=false > build/depthkit.min.js",
+    "start": "concurrently \"http-server -s --cors\" \"watchify --exclude three src/index.js -o build/depthkit.js -v\"",
+    "build": "browserify --exclude three src/index.js | uglifyjs -mc warnings=false > build/depthkit.min.js",
     "test": "npm run build"
   },
   "repository": {
@@ -32,7 +32,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
-    "three": "^0.87.1",
+    "three": "git+https://github.com/MozillaReality/three.js.git#0f9b0024725f0dd917caa54c2934a4ba1fc12c4f",
     "webvr-polyfill": "^0.9.36"
   },
   "browserify": {
