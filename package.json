@@ -32,7 +32,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
-    "three": "git+https://github.com/MozillaReality/three.js.git#0f9b0024725f0dd917caa54c2934a4ba1fc12c4f"
+    "three": "github:mozillareality/three.js#hubs/master"
   },
   "browserify": {
     "transform": [
